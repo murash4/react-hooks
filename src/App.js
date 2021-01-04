@@ -4,31 +4,36 @@ import Home from './pages/Home'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import About from './pages/About'
 import Profile from './pages/Profile'
+import { Alert } from './components/Alert'
+import { AlertState } from './context/alert/alertState'
 
 function App() {
   return (
-    <BrowserRouter>
-      <Navbar />
-      <div className="container pt-4">
-        <Switch>
-          <Route
-            path="/"
-            exact
-            component={ Home }
-          />
+    <AlertState>
+      <BrowserRouter>
+        <Navbar />
+        <div className="container pt-4">
+          <Alert alert={{text: 'Test alert'}} />
+          <Switch>
+            <Route
+              path="/"
+              exact
+              component={ Home }
+            />
 
-          <Route
-            path="/about"
-            component={ About }
-          />
+            <Route
+              path="/about"
+              component={ About }
+            />
 
-          <Route
-            path="/profile/:name"
-            component={ Profile }
-          />
-        </Switch>
-      </div>
-    </BrowserRouter>
+            <Route
+              path="/profile/:name"
+              component={ Profile }
+            />
+          </Switch>
+        </div>
+      </BrowserRouter>
+    </AlertState>
   )
 }
 
