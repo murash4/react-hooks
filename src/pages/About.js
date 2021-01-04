@@ -1,7 +1,10 @@
 const About = () => {
 	return (
-		<div>
-			<h1>About page</h1>
+		<div className="jumbotron umbotron-fluid">
+			<div className="container">
+				<div className="display-4">Информация</div>
+				<p className="lead">Версия приложения: <strong>1.0.0</strong></p>
+			</div>
 		</div>
 	)
 }
