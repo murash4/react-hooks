@@ -1,7 +1,7 @@
 import {Fragment, useContext} from 'react'
 import { Search } from '../components/Search'
 import { Card } from '../components/Card'
-import {GithubContext} from "../context/github/githubContext";
+import { GithubContext } from '../context/github/githubContext'
 
 const Home = () => {
 	const { loading, users } = useContext(GithubContext)
